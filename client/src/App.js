@@ -1,10 +1,15 @@
-import { Button } from "./components/ui/Button";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import LandingPage from './pages/LandingPage';
 
 const App = () => {
   return (
-    <div>
-      <h1>React App</h1>
-      <Button>Get Started</Button>
+    <div className="h-[100vh] w-full">
+      <Router>
+        <Routes>
+          <Route exact path='/' element={ <LandingPage /> } />
+        </Routes>
+      </Router>
     </div>
   );
 }
