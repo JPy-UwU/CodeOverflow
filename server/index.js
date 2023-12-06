@@ -6,6 +6,7 @@ import cookieParser from "cookie-parser";
 
 import "./utils/create-db.js";
 import authRoutes from "./routes/auth.js";
+import userRoutes from "./routes/user.js";
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use("/api/auth", authRoutes);
+app.use("/api/user", userRoutes);
 
 const PORT = process.env.PORT || 8080;
 
