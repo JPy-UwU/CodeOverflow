@@ -34,6 +34,35 @@
       }
     }
 
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: themed("textColor");
+    }
+
+    input {
+      border: none;
+      width: inherit;
+      font-size: medium;
+      padding: 5px;
+      background-color: themed("bg");
+      border: 1px solid themed("border");
+      border-radius: 5px;
+      color: themed("textColor");
+
+      @include mobile {
+        display: none;
+      }
+
+      @include tablet {
+        width: 200px;
+      }
+    }
+
+    input:focus {
+      outline: none;
+    }
+
     .user {
       display: flex;
       align-items: center;
