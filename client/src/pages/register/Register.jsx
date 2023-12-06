@@ -1,11 +1,12 @@
 import { useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 
 import "./register.scss"
 
 const RegisterPage = () => {
+  const navigate = useNavigate();
   const [inputs, setInputs] = useState({
     username: "",
     email: "",
@@ -21,8 +22,14 @@ const RegisterPage = () => {
 
     try {
       await axios.post("http://localhost:8080/api/auth/register", inputs);
+      toast.success("User created successfully!");
+      navigate("/login");
     } catch (error) {
-      toast.error("Something went wrong!");
+      if (error.response.status === 409) {
+        toast.error("User already exists!");
+      } else {
+        toast.error("Something went wrong!");
+      }
     }
   };
 

@@ -23,7 +23,13 @@ const Login = () => {
       await login(inputs);
       navigate("/home")
     } catch (err) {
-      toast.error("Something went wrong!");
+      if (err.response.status === 401) {
+        toast.error("Invalid credentials!");
+      } else if (err.response.status === 404) {
+        toast.error("User not found!");
+      } else {
+        toast.error("Something went wrong!");
+      }
     }
   };
 
