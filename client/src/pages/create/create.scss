@@ -1,0 +1,80 @@
+@import "../../style.scss";
+
+.create {
+  @include themify($themes) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 50px 70px;
+    background-color: themed("bgSoft");
+
+    @include mobile {
+      padding: 10px;
+    }
+
+    @include tablet{
+      padding: 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 700px;
+      background-color: themed("bg");
+      border-radius: 10px;
+      padding: 20px;
+
+      @include mobile {
+        padding: 10px;
+      }
+
+      @include tablet{
+        padding: 20px;
+      }
+
+      h2 {
+        font-size: 24px;
+        font-weight: bold;
+        color: themed("textColor");
+      }
+
+      .item {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;;
+        
+        p {
+          margin: 5px 0;
+          color: themed("textColorSoft");
+        }
+
+        input {
+          height: 20px;
+          border-radius: 5px;
+          border: 1px solid themed("border");
+          padding: 0 10px;
+          font-size: 12px;
+          color: themed("text");
+          background-color: themed("bg");
+          color: themed("textColorSoft");
+        }
+
+        input:focus {
+          outline: none;
+        }
+
+        button {
+          margin-top: 10px;
+          height: 30px;
+          border-radius: 5px;
+          border: none;
+          background-color: themed("bgSoft");
+          color: themed("textColor");
+          font-size: 12px;
+          font-weight: bold;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+ }

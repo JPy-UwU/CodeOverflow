@@ -40,24 +40,22 @@ const Navbar = () => {
           <SearchOutlinedIcon />
           <input type="text" placeholder="Search..." />
         </div>
-        <div className="create"> 
           <button onClick={() => navigate("/create")}>Create Post</button>
-        </div>
       </div>
       <div className="right">
-        <HomeOutlinedIcon onClick={() => navigate("/home")} />
-        <GroupOutlinedIcon onClick={() => navigate("/users")} />
-        <SellOutlinedIcon onClick={() => navigate("/tags")} />
+        <HomeOutlinedIcon onClick={() => navigate("/home")} className="icon" />
+        <GroupOutlinedIcon onClick={() => navigate("/users")} className="icon" />
+        <SellOutlinedIcon onClick={() => navigate("/tags")} className="icon" />
         {darkMode ? (
-          <WbSunnyOutlinedIcon onClick={toggle} />
+          <WbSunnyOutlinedIcon onClick={toggle} className="icon" />
         ) : (
-          <DarkModeOutlinedIcon onClick={toggle} />
+          <DarkModeOutlinedIcon onClick={toggle} className="icon" />
         )}
         <div className="user">
           <img src="https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="" />
           <span>{currentUser.username}</span>
         </div>
-        <LogoutOutlinedIcon onClick={handleLogout} />
+        <LogoutOutlinedIcon onClick={handleLogout} className="icon" />
       </div>
     </div>
   );
