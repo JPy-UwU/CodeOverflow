@@ -1,11 +1,15 @@
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import WbSunnyOutlinedIcon from "@mui/icons-material/WbSunnyOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 
 import "./navbar.scss"
+import { DarkModeContext } from '../../context/darkModeContext';
 
 const Navbar = () => {
+  const { toggle, darkMode } = useContext(DarkModeContext);
+
   return (
     <div className="navbar">
       <div className="left">
@@ -18,7 +22,11 @@ const Navbar = () => {
         </div>
       </div>
       <div className="right">
-        <DarkModeOutlinedIcon />
+      {darkMode ? (
+          <WbSunnyOutlinedIcon onClick={toggle} />
+        ) : (
+          <DarkModeOutlinedIcon onClick={toggle} />
+        )}
         <div className="user">
           {/* <img
             src={currentUser.profilePic}
