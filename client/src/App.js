@@ -16,6 +16,8 @@ import RegisterPage from "./pages/register/Register";
 import Navbar from "./components/navbar/Navbar";
 import { AuthContext } from "./context/authContext";
 import { DarkModeContext } from "./context/darkModeContext";
+import UsersPage from "./pages/users/Users";
+import TagsPage from "./pages/tags/Tags";
 
 function App() {
   const currentUser = useContext(AuthContext);
@@ -65,6 +67,14 @@ function App() {
           path: "/post/:id",
           element: <PostPage />,
         },
+        {
+          path: "/users",
+          element: <UsersPage />,
+        },
+        {
+          path: "/tags",
+          element: <TagsPage />,
+        }
       ],
     },
     {
