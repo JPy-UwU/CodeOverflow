@@ -18,7 +18,7 @@ const currentUser = true;
 
 const Layout = () => {
   return (
-    <div>
+    <div className="theme-light">
       <Navbar />
       <div style={{ display: "flex" }}>
         <Outlet />
