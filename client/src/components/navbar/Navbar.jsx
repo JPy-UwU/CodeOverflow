@@ -26,6 +26,7 @@ const Navbar = () => {
       navigate("/");
     } catch (error) {
       toast.error("Something went wrong!");
+      return;
     }
   };
   

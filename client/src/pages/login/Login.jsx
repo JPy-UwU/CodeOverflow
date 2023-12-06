@@ -1,9 +1,9 @@
 import { useContext, useState } from "react";
+import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 
 import "./login.scss";
 import { AuthContext } from "../../context/authContext";
-import toast from "react-hot-toast";
 
 const Login = () => {
   const navigate = useNavigate()
@@ -21,15 +21,17 @@ const Login = () => {
     e.preventDefault();
     try {
       await login(inputs);
+      toast.success("Logged in successfully!");
       navigate("/home")
-    } catch (err) {
-      if (err.response.status === 401) {
+    } catch (error) {
+      if (error.response?.status === 401) {
         toast.error("Invalid credentials!");
-      } else if (err.response.status === 404) {
+      } else if (error.response?.status === 404) {
         toast.error("User not found!");
       } else {
         toast.error("Something went wrong!");
       }
+      return;
     }
   };
 
@@ -52,7 +54,7 @@ const Login = () => {
           <h1>Login</h1>
           <form>
             <input type="text" placeholder="Username" name="username" onChange={handleOnChange} />
-            <input type="password" placeholder="Password" name="pasaword" onChange={handleOnChange} />
+            <input type="password" placeholder="Password" name="password" onChange={handleOnChange} />
             <button onClick={handleLogin}>Login</button>
           </form>
         </div>
