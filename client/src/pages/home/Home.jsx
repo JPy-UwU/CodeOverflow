@@ -1,9 +1,10 @@
 import "./home.scss"
+import Posts from "../../components/posts/Posts";
 
 const HomePage = () => {
   return (
     <div className="home">
-      <h1>Home Page</h1>
+      <Posts />
     </div>
   );
 }

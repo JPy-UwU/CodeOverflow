@@ -26,6 +26,9 @@ const Navbar = () => {
           <SearchOutlinedIcon />
           <input type="text" placeholder="Search..." />
         </div>
+        <div className="create"> 
+          <button onClick={() => navigate("/create")}>Create Post</button>
+        </div>
       </div>
       <div className="right">
         <HomeOutlinedIcon onClick={() => navigate("/home")} />

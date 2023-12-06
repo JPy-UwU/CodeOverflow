@@ -12,12 +12,12 @@ import HomePage from "./pages/home/Home";
 import PostPage from "./pages/post/Post";
 import ProfilePage from "./pages/profile/Profile";
 import LoginPage from "./pages/login/Login";
+import UsersPage from "./pages/users/Users";
+import TagsPage from "./pages/tags/Tags";
 import RegisterPage from "./pages/register/Register";
 import Navbar from "./components/navbar/Navbar";
 import { AuthContext } from "./context/authContext";
 import { DarkModeContext } from "./context/darkModeContext";
-import UsersPage from "./pages/users/Users";
-import TagsPage from "./pages/tags/Tags";
 
 function App() {
   const currentUser = useContext(AuthContext);

@@ -48,6 +48,38 @@
           }
         }
       }
+
+      .create {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border-radius: 3px;
+        border: 1px solid themed("border");
+        padding: 5px;
+        cursor: pointer;
+
+        @include mobile{
+          display: none;
+        }
+        
+        button {
+          border: none;
+          background-color: transparent;
+          color: themed("textColor");
+          font-weight: bold;
+          cursor: pointer;
+        }
+
+        .icon {
+          font-size: 20px;
+          color: themed("logo");
+        }
+
+        span {
+          font-weight: 500;
+          color: themed("logo");
+        }
+      }
     }
 
     .right {
