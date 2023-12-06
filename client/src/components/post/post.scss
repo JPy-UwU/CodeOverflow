@@ -8,8 +8,9 @@
     width: 80%;
     padding: 50px 70px;
     background-color: themed("bg");
+    color: themed("textColor");
     border-radius: 10px;
-    margin: 20px auto;
+    margin: 20px;
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease-in-out;
@@ -28,6 +29,10 @@
       height: 100%;
       position: relative;
       z-index: 1;
+
+      span {
+        color: themed("textColor");
+      }
     }
 
     .right {
@@ -39,22 +44,26 @@
       height: 100%;
       position: relative;
       z-index: 1;
+      color: themed("textColor");
 
       Link {
         text-decoration: none;
-        color: themed("text");
+        color: themed("textColor");
       }
 
       .title {
         font-size: 2rem;
         font-weight: 600;
         margin-bottom: 10px;
+        color: themed("textColor");
       }
       
       .description {
         font-size: 1.2rem;
         font-weight: 400;
         margin-bottom: 10px;
+        color: themed("textColor");
+
       }
     }
 
@@ -79,7 +88,7 @@
         width: 100px;
         height: 100%;
         background-color: themed("bgSoft");
-        color: themed("text");
+        color: themed("textColor");
         margin: 0px 10px;
         border-radius: 5px;
       }

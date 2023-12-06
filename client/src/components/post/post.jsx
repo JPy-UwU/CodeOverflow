@@ -12,7 +12,7 @@ const Post = ({ post }) => {
       </div>
       <div className="right">
         <span className="title">
-          <Link style={{ textDecoration: "none" }} to={`/post/:${post.id}`}>{post.title}</Link>
+          <Link to={`/post/:${post.id}`} style={{ textDecoration: "none" }}>{post.title}</Link>
         </span>
         <span className="description">{post.description}</span>
       </div>
