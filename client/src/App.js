@@ -2,9 +2,7 @@ import LoginPage from "./pages/login/Login";
 
 function App() {
   return (
-    <div>
-      <LoginPage />
-    </div>
+    <LoginPage />
   );
 }
 
