@@ -16,7 +16,7 @@ const Post = ({ post }) => {
         </span>
         <span className="description">{post.description}</span>
       </div>
-      <div className="tags">
+      <div className="tags-list">
         {post.tags.map((tag) => (
           <span>{tag}</span>
         ))}
