@@ -10,10 +10,10 @@ import "./style.scss";
 import LadningPage from "./pages/landing/Landing";
 import HomePage from "./pages/home/Home";
 import PostPage from "./pages/post/Post";
-import ProfilePage from "./pages/profile/Profile";
 import LoginPage from "./pages/login/Login";
 import UsersPage from "./pages/users/Users";
 import TagsPage from "./pages/tags/Tags";
+import CreatePage from "./pages/create/Create";
 import RegisterPage from "./pages/register/Register";
 import Navbar from "./components/navbar/Navbar";
 import { AuthContext } from "./context/authContext";
@@ -60,8 +60,8 @@ function App() {
           element: <HomePage />,
         },
         {
-          path: "/profile/:id",
-          element: <ProfilePage />,
+          path: "/create",
+          element: <CreatePage />,
         },
         {
           path: "/post/:id",
