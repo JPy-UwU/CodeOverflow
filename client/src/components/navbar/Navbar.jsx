@@ -55,7 +55,7 @@ const Navbar = () => {
         )}
         <div className="user">
           <img src="https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="" />
-          <span>{currentUser.name}</span>
+          <span>{currentUser.username}</span>
         </div>
         <LogoutOutlinedIcon onClick={handleLogout} />
       </div>
