@@ -5,6 +5,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
+import "./style.scss";
 import LadningPage from "./pages/landing/Landing";
 import HomePage from "./pages/home/Home";
 import PostPage from "./pages/post/Post";
