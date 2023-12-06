@@ -7,8 +7,8 @@ import TagsInput from "../../components/tags-input/TagsInput";
 import { DarkModeContext } from "../../context/darkModeContext";
 
 const CreatePage = () => {
-  const { darkMode } = useContext(DarkModeContext);
   const navigate = useNavigate();
+  const { darkMode } = useContext(DarkModeContext);
   const [value, setValue] = useState("**Hello world!!!**");
 
 
