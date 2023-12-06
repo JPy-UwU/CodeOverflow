@@ -6,8 +6,10 @@ import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 
 import "./navbar.scss"
 import { DarkModeContext } from '../../context/darkModeContext';
+import { AuthContext } from '../../context/authContext';
 
 const Navbar = () => {
+  const { currentUser } = useContext(AuthContext);
   const { toggle, darkMode } = useContext(DarkModeContext);
 
   return (
@@ -28,11 +30,11 @@ const Navbar = () => {
           <DarkModeOutlinedIcon onClick={toggle} />
         )}
         <div className="user">
-          {/* <img
+          <img
             src={currentUser.profilePic}
             alt=""
           />
-          <span>{currentUser.name}</span> */}
+          <span>{currentUser.name}</span>
         </div>
       </div>
     </div>

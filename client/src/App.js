@@ -14,12 +14,13 @@ import ProfilePage from "./pages/profile/Profile";
 import LoginPage from "./pages/login/Login";
 import RegisterPage from "./pages/register/Register";
 import Navbar from "./components/navbar/Navbar";
+import { AuthContext } from "./context/authContext";
 import { DarkModeContext } from "./context/darkModeContext";
 
 function App() {
+  const currentUser = useContext(AuthContext);
   const { darkMode } = useContext(DarkModeContext);
 
-  const currentUser = true;
 
   const Layout = () => {
     return (
