@@ -9,7 +9,7 @@ export const AuthContextProvider = ({ children }) => {
   );
 
   const login = async (inputs) => {
-    const res = axios.fetch("http://localhost:8080/api/auth/login", inputs, {
+    const res = await axios.fetch("http://localhost:8080/api/auth/login", inputs, {
       withCredentials: true,
     });
 
