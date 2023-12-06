@@ -1,8 +1,31 @@
+import { useState } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
 
 import "./register.scss"
 
 const RegisterPage = () => {
+  const [inputs, setInputs] = useState({
+    username: "",
+    email: "",
+    password: "",
+  });
+
+  const handleOnChange = (e) => {
+    setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleOnClick = async (e) => {
+    e.preventDefault();
+
+    try {
+      await axios.post("http://localhost:8080/api/auth/register", inputs);
+    } catch (error) {
+      toast.error("Something went wrong!");
+    }
+  };
+
   return (
     <div className="register">
       <div className="card">
@@ -19,10 +42,10 @@ const RegisterPage = () => {
         <div className="right">
           <h1>Register</h1>
           <form>
-            <input type="text" placeholder="Username" />
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
-            <button>Register</button>
+            <input type="text" placeholder="Username" name="username" onChange={handleOnChange} />
+            <input type="email" placeholder="Email" name="email" onChange={handleOnChange} />
+            <input type="password" placeholder="Password" name="password" onChange={handleOnChange} />
+            <button onClick={handleOnClick}>Register</button>
           </form>
         </div>
       </div>
