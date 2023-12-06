@@ -1,0 +1,57 @@
+@import "../../style.scss";
+
+.users {
+  @include themify($themes) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 50px 70px;
+    background-color: themed("bgSoft");
+
+    @include mobile {
+      padding: 10px;
+    }
+
+    @include tablet {
+      padding: 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 700px;
+      background-color: themed("bg");
+      border-radius: 10px;
+      padding: 20px;
+      color: themed("textColor");
+
+      @include mobile {
+        padding: 10px;
+      }
+
+      @include tablet {
+        padding: 20px;
+      }
+    }
+
+    .user {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      border-bottom: 1px solid themed("border");
+
+      @include mobile {
+        padding: 10px;
+      }
+
+      @include tablet {
+        padding: 20px;
+      }
+
+      i:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
