@@ -46,7 +46,7 @@ export const login = (req, res) => {
       return res.status(401).json({ message: "Invalid password" });
     }
 
-    const token = jwt.sign({ id: result[0].id }, process.env.JWT_SECRET);
+    const token = jwt.sign({ id: result[0].id }, "secret");
 
     const {password, ...user} = result[0];
 
