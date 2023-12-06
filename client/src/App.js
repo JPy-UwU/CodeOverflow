@@ -7,11 +7,11 @@ import {
 
 import LadningPage from "./pages/landing/Landing";
 import HomePage from "./pages/home/Home";
+import PostPage from "./pages/post/Post";
 import ProfilePage from "./pages/profile/Profile";
 import LoginPage from "./pages/login/Login";
 import RegisterPage from "./pages/register/Register";
 import Navbar from "./components/navbar/Navbar";
-import Sidebar from "./components/sidebar/Sidebar";
 
 const currentUser = true;
 
@@ -20,7 +20,6 @@ const Layout = () => {
     <div>
       <Navbar />
       <div style={{ display: "flex" }}>
-        <Sidebar />
         <Outlet />
       </div>
     </div>
@@ -54,6 +53,10 @@ const router = createBrowserRouter([
       {
         path: "/profile/:id",
         element: <ProfilePage />,
+      },
+      {
+        path: "/post/:id",
+        element: <PostPage />,
       },
     ],
   },
