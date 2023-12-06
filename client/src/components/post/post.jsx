@@ -1,24 +1,20 @@
+import { Link } from "react-router-dom";
+
 import "./post.scss";
 
 const Post = ({ post }) => {
   return (
     <div className="post">
-      <div className="container">
-        
-        <div className="left">
-          <span className="vote-count">
-            {post.voteCount}
-          </span>
-          <span className="vote-count-label">
-            Votes
-          </span>
-        </div>
-        <div className="left">
-          <span className="title">{post.title}</span>
-          <span className="description">
-            {post.description}
-          </span>
-        </div>
+      <div className="left">
+        <span>{post.voteCount} Votes</span>
+        <span>{post.answerCount} Answers</span>
+        <span>{post.commentCount} Comments</span>
+      </div>
+      <div className="right">
+        <span className="title">
+          <Link style={{ textDecoration: "none" }} to={`/post/:${post.id}`}>{post.title}</Link>
+        </span>
+        <span className="description">{post.description}</span>
       </div>
       <div className="tags">
         {post.tags.map((tag) => (
@@ -27,6 +23,6 @@ const Post = ({ post }) => {
       </div>
     </div>
   );
-}
+};
 
 export default Post;
